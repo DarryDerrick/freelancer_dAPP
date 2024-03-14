@@ -54,14 +54,14 @@ actor JoblistingActor{
   public func addJobListing(title : Text, description : Text, tags : [Text]) : async () {
     let jobId = jobCounter + 1;
     let newJob = Job(
-      id = jobId,
-      title = title,
-      description = description,
-      tags = tags,
-      prize = 0,
-      owner = Principal.fromActor(_owner),
-      freelancer = null,
-      status = "open"
+      id := jobId,
+      title := title,
+      description := description,
+      tags := tags,
+      prize := 0,
+      owner := Principal.fromActor(_owner),
+      freelancer := null,
+      status := "open"
     );
     jobs[jobId] := newJob;
     Log("JobAdded", [("jobId", Nat.toText(jobId)), ("title", title), ("description", description), ("tags", tags)]);
